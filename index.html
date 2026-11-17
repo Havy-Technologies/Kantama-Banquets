@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>KANTAMA Banquet Hall | Where Every Celebration Becomes a Royal Memory</title>
+  <meta name="description" content="Experience unmatched luxury, grandeur, and elegance at KANTAMA Banquet Hall. The premier destination for weddings, receptions, and corporate celebrations.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #520D22;
+      --secondary: #300714;
+      --accent: #D4AF37;
+      --accent-light: #F3E5AB;
+      --bg-ivory: #FFF9F0;
+      --text-dark: #252020;
+      --text-muted: #6B5B5B;
+      --white: #FFFFFF;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-lux: 0 20px 40px -15px rgba(82, 13, 34, 0.15);
+      --border-gold: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-ivory);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    h1, h2, h3, h4, h5, h6, .brand-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #AA8010 100%);
+      color: #300714;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
+      border: 1px solid #FFE5B4;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.6);
+      filter: brightness(1.1);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       CINEMATIC VIDEO INTRO (FULLY RESPONSIVE)
+       ========================================================================== */
+    #cinematic-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--secondary);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #cinematic-intro.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .intro-header {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .intro-logo {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .intro-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .intro-btn-sm {
+      background: rgba(255, 255, 255, 0.1);
+      border: var(--border-gold);
+      color: var(--accent-light);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .intro-btn-sm:hover {
+      background: var(--accent);
+      color: var(--secondary);
+    }
+
+    .intro-screen-body {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .intro-video-el {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      filter: brightness(0.8);
+    }
+
+    .intro-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(48,7,20,0.3) 0%, rgba(48,7,20,0.88) 100%);
+    }
+
+    .intro-content-box {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .intro-subtitle-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: inline-block;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 6px;
+    }
+
+    .intro-main-title {
+      font-size: clamp(1.85rem, 5vw, 4.2rem);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .intro-desc {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #E2D9D0;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .intro-footer {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .intro-progress-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .intro-dot {
+      width: 28px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .intro-dot.active {
+      background: var(--accent);
+      width: 48px;
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR (SOLID ROYAL MAROON & ALL-DEVICE COMPATIBLE)
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      background: rgba(82, 13, 34, 0.98);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1001;
+    }
+
+    .brand-logo-icon {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+
+    .brand-logo-sub {
+      font-size: 0.55rem;
+      letter-spacing: 2.5px;
+      color: var(--accent);
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      color: var(--white);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 1001;
+    }
+
+    .nav-book-btn {
+      padding: 10px 22px;
+      font-size: 0.75rem;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--accent);
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       SPA VIEWS CONTROLLER
+       ========================================================================== */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      padding-top: 72px;
+    }
+
+    .page-view.active-view {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       PAGE SECTIONS (RESPONSIVE GRIDS)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      padding: 80px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(48,7,20,0.65), rgba(48,7,20,0.88)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 20px;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: inline-block;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 6px 18px;
+      border-radius: 30px;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 6vw, 5.2rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #F1E6DA;
+      margin-bottom: 35px;
+      font-weight: 300;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .section-pad {
+      padding: clamp(60px, 8vw, 100px) 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 48px auto;
+    }
+
+    .section-subtitle {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .section-divider {
+      width: 70px;
+      height: 3px;
+      background: var(--accent);
+      margin: 0 auto;
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .welcome-images {
+      position: relative;
+      padding-bottom: 30px;
+    }
+
+    .img-main {
+      border-radius: 14px;
+      box-shadow: var(--shadow-lux);
+      width: 85%;
+      height: 420px;
+      object-fit: cover;
+      border: 4px solid var(--white);
+    }
+
+    .img-floating {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--shadow-lux);
+      border: 4px solid var(--white);
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--secondary);
+      font-size: 0.92rem;
+    }
+
+    .feature-item i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .highlights-section {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 70px 0;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 24px;
+      text-align: center;
+    }
+
+    .highlight-card {
+      padding: 28px 20px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+    }
+
+    .highlight-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    .highlight-icon {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .highlight-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    .highlight-label {
+      font-size: 0.82rem;
+      color: #D2C2B4;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* All Grids use min(100%, 290px) to prevent horizontal scroll on 320px phones */
+    .events-preview-grid,
+    .venue-grid,
+    .services-grid,
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 28px;
+    }
+
+    .event-card {
+      position: relative;
+      height: 390px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lux);
+      cursor: pointer;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .event-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .event-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(48,7,20,0.95) 0%, rgba(48,7,20,0.25) 65%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      color: var(--white);
+    }
+
+    .event-card-title {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .event-card-desc {
+      font-size: 0.9rem;
+      color: #E2D9D0;
+      margin-bottom: 16px;
+    }
+
+    .testimonials-section {
+      background: #F7EFE5;
+      padding: clamp(60px, 8vw, 100px) 0;
+    }
+
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--white);
+      padding: clamp(30px, 5vw, 55px);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lux);
+      border: var(--border-gold);
+    }
+
+    .testimonial-quote {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-dark);
+      font-style: italic;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .testimonial-event {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+
+    .about-hero {
+      background: linear-gradient(rgba(48,7,20,0.75), rgba(48,7,20,0.75)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: clamp(70px, 10vw, 110px) 0 clamp(50px, 8vw, 80px);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      margin-bottom: 12px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .venue-card, .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lux);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .venue-card-img, .service-card-img {
+      height: 230px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .venue-card-body, .service-card-content {
+      padding: 26px;
+    }
+
+    .venue-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      padding: 9px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.8rem;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      height: 260px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .package-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 35px 28px;
+      box-shadow: var(--shadow-lux);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--accent);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F0 100%);
+    }
+
+    .package-badge {
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      background: var(--accent);
+      color: var(--secondary);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .package-title {
+      font-size: 1.65rem;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .package-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .package-features {
+      margin-bottom: 28px;
+    }
+
+    .package-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+
+    .package-features li i {
+      color: var(--accent);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .contact-info-box {
+      background: var(--secondary);
+      color: var(--white);
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lux);
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .contact-info-item i {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .contact-form-box {
+      background: var(--white);
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lux);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid #D2C2B4;
+      border-radius: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      background: var(--bg-ivory);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--white);
+    }
+
+    .footer {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 70px 0 28px 0;
+      border-top: 2px solid var(--accent);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: #D2C2B4;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent);
+      padding-left: 6px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.82rem;
+      color: #A09085;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25D366;
+      color: var(--white);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+      z-index: 990;
+      transition: var(--transition);
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    #lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #lightbox-modal.active {
+      display: flex;
+    }
+
+    #lightbox-modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      border-radius: 8px;
+      border: 2px solid var(--accent);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      color: var(--white);
+      font-size: 2.4rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       TABLET & MOBILE BREAKPOINTS (TRUE MULTI-DEVICE COMPATIBILITY)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .welcome-grid, .story-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(82, 13, 34, 0.99);
+        backdrop-filter: blur(16px);
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        transition: right 0.35s ease-in-out;
+        z-index: 1000;
+      }
+
+      .nav-links.mobile-open {
+        right: 0;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-book-btn {
+        padding: 8px 14px;
+        font-size: 0.68rem;
+      }
+
+      .img-main {
+        width: 100%;
+        height: 300px;
+      }
+
+      .img-floating {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-top: 14px;
+      }
+
+      .welcome-images {
+        padding-bottom: 0;
+      }
+
+      .features-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons .btn-gold,
+      .hero-buttons .btn-outline {
+        width: 100%;
+      }
+
+      .intro-footer {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     CINEMATIC VIDEO INTRODUCTION
+     ========================================================================== -->
+  <div id="cinematic-intro">
+    <div class="intro-header">
+      <div class="intro-logo">KANTAMA</div>
+      <div class="intro-controls">
+        <button class="intro-btn-sm" id="sound-toggle-btn"><i class="fas fa-volume-mute"></i> Sound: Off</button>
+        <button class="intro-btn-sm" onclick="skipCinematicIntro()">Skip Intro &rarr;</button>
+      </div>
+    </div>
+
+    <div class="intro-screen-body">
+      <video id="intro-video-element" class="intro-video-el" playsinline muted preload="auto"></video>
+      <div class="intro-vignette"></div>
+
+      <div class="intro-content-box">
+        <span class="intro-subtitle-tag" id="intro-scene-badge">Act I • The Royal Threshold</span>
+        <h1 class="intro-main-title" id="intro-scene-title">Where Every Celebration Becomes a Royal Memory</h1>
+        <p class="intro-desc" id="intro-scene-subtitle">Step into an extraordinary world of unmatched grandeur and elegance.</p>
+        
+        <div id="intro-action-container">
+          <button class="btn-gold" id="intro-action-btn" onclick="handleIntroAction()">
+            <span id="intro-btn-text">Tap to Experience</span> <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-footer">
+      <div class="intro-progress-dots">
+        <div class="intro-dot active" id="dot-0"></div>
+        <div class="intro-dot" id="dot-1"></div>
+        <div class="intro-dot" id="dot-2"></div>
+      </div>
+      <div style="font-size:0.7rem; letter-spacing: 2px; color: #D2C2B4; text-transform: uppercase;">
+        Cinematic Experience
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     NAVIGATION BAR (SOLID ROYAL MAROON)
+     ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" onclick="switchPage('home'); return false;" class="brand-logo">
+        <div class="brand-logo-icon">K</div>
+        <div>
+          <span class="brand-logo-text">KANTAMA</span>
+          <span class="brand-logo-sub">Banquet Hall</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links-menu">
+        <a href="#home" onclick="switchPage('home'); return false;" class="nav-link active" data-page="home">Home</a>
+        <a href="#about" onclick="switchPage('about'); return false;" class="nav-link" data-page="about">About</a>
+        <a href="#venue" onclick="switchPage('venue'); return false;" class="nav-link" data-page="venue">Venue</a>
+        <a href="#events" onclick="switchPage('events'); return false;" class="nav-link" data-page="events">Events</a>
+        <a href="#gallery" onclick="switchPage('gallery'); return false;" class="nav-link" data-page="gallery">Gallery</a>
+        <a href="#packages" onclick="switchPage('packages'); return false;" class="nav-link" data-page="packages">Packages</a>
+        <a href="#contact" onclick="switchPage('contact'); return false;" class="nav-link" data-page="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-gold nav-book-btn" onclick="switchPage('contact')">Book Event</button>
+        <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE 1: HOME ================= -->
+  <div id="view-home" class="page-view active-view">
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-tag">Welcome to Kantama</span>
+        <h1 class="hero-title">Celebrate Life. Celebrate Grandeur.</h1>
+        <p class="hero-description">An extraordinary destination for weddings, receptions, engagements, and unforgettable occasions crafted with royal precision.</p>
+        <div class="hero-buttons">
+          <button class="btn-gold" onclick="switchPage('venue')">Explore Our Venue <i class="fas fa-arrow-right"></i></button>
+          <button class="btn-outline" style="color:var(--white); border-color:var(--white);" onclick="switchPage('contact')">Book Your Event</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container welcome-grid">
+        <div class="welcome-images">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Banquet Hall Grandeur" class="img-main">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Wedding Stage" class="img-floating">
+        </div>
+        <div class="welcome-text">
+          <div class="section-subtitle">A Tradition of Elegance</div>
+          <h2 class="section-title">Where Every Celebration Becomes a Royal Memory.</h2>
+          <p>KANTAMA Banquet Hall stands as an architectural masterpiece designed to host life's most precious milestones. From magnificent crystal chandeliers to immaculate banquet service, we provide an ambiance of supreme luxury.</p>
+          
+          <div class="features-list">
+            <div class="feature-item"><i class="fas fa-gem"></i> Grand Ballrooms</div>
+            <div class="feature-item"><i class="fas fa-utensils"></i> Royal Catering</div>
+            <div class="feature-item"><i class="fas fa-crown"></i> Dedicated Butler</div>
+            <div class="feature-item"><i class="fas fa-parking"></i> Valet Parking</div>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <button class="btn-gold" onclick="switchPage('about')">Discover Our Story <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights-section">
+      <div class="container highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-users"></i></div>
+          <div class="highlight-number">1,500+</div>
+          <div class="highlight-label">Guest Capacity</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-award"></i></div>
+          <div class="highlight-number">100%</div>
+          <div class="highlight-label">Tailored Hospitality</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-glass-cheers"></i></div>
+          <div class="highlight-number">500+</div>
+          <div class="highlight-label">Successful Galas</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fas fa-star"></i></div>
+          <div class="highlight-number">5-Star</div>
+          <div class="highlight-label">Luxury Standard</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Exquisite Occasions</div>
+          <h2 class="section-title">Designed For Every Milestone</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="events-preview-grid">
+          <div class="event-card" onclick="switchPage('events')">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Weddings">
+            <div class="event-card-overlay">
+              <h3 class="event-card-title">Grand Weddings</h3>
+              <p class="event-card-desc">Breathtaking mandaps, regal seating, and unmatched royal hospitality for your eternal union.</p>
+              <span style="color:var(--accent); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Enquire Now &rarr;</span>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="switchPage('events')">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Receptions">
+            <div class="event-card-overlay">
+              <h3 class="event-card-title">Regal Receptions</h3>
+              <p class="event-card-desc">Atmospheric lighting, magnificent stages, and spacious dining for celebratory evenings.</p>
+              <span style="color:var(--accent); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Enquire Now &rarr;</span>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="switchPage('events')">
+            <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80" alt="Corporate Galas">
+            <div class="event-card-overlay">
+              <h3 class="event-card-title">Corporate Galas</h3>
+              <p class="event-card-desc">State-of-the-art acoustics and sophisticated corporate setup for elite business gatherings.</p>
+              <span style="color:var(--accent); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">Enquire Now &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Words of Praise</div>
+          <h2 class="section-title">Memories Crafted By Our Patrons</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="testimonial-slider">
+          <p class="testimonial-quote">"KANTAMA Banquet Hall transformed our wedding into a fairy tale. The grandeur of the ballroom combined with immaculate hospitality left every single guest spellbound."</p>
+          <div class="testimonial-author">Aarav & Meera Sharma</div>
+          <div class="testimonial-event">Wedding Reception Celebration</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 2: ABOUT US ================= -->
+  <div id="view-about" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Our Heritage</span>
+        <h1 class="brand-font">The Essence of Kantama</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">Dedicated to upholding the highest standards of luxury event hospitality.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container story-grid">
+        <div>
+          <div class="section-subtitle">Our Journey</div>
+          <h2 class="section-title">A Legacy of Grandeur & Elegance</h2>
+          <p>KANTAMA Banquet Hall was conceived with a singular vision: to provide a peerless venue where milestone celebrations receive the royal treatment they deserve. Every archway, chandelier, and marble corridor has been meticulously designed to inspire awe.</p>
+          <p style="margin-top:16px;">We blend traditional warmth with contemporary luxury, ensuring seamless execution for weddings, galas, and momentous celebrations.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Kantama Interior" style="border-radius:16px; box-shadow:var(--shadow-lux);">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 3: VENUE ================= -->
+  <div id="view-venue" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Architectural Masterpiece</span>
+        <h1 class="brand-font">Explore The Venue</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">Immaculately crafted spaces tailored for unforgettable gatherings.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="venue-grid">
+          <div class="venue-card">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Grand Ballroom" class="venue-card-img">
+            <div class="venue-card-body">
+              <h3>The Grand Ballroom</h3>
+              <p>Our flagship hall featuring high ceilings, magnificent crystal chandeliers, and expansive floor space.</p>
+              <div class="venue-specs">
+                <span><i class="fas fa-users"></i> Capacity: 1,000+ Guests</span>
+                <span><i class="fas fa-expand"></i> 8,500 sq.ft</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-card">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Royal Stage" class="venue-card-img">
+            <div class="venue-card-body">
+              <h3>Stage & Mandap Arena</h3>
+              <p>Customizable regal stage architecture with integrated ambient lighting and acoustic precision.</p>
+              <div class="venue-specs">
+                <span><i class="fas fa-star"></i> Bespoke Decor</span>
+                <span><i class="fas fa-lightbulb"></i> Dynamic Lighting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-card">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="Dining Hall" class="venue-card-img">
+            <div class="venue-card-body">
+              <h3>Imperial Dining Suite</h3>
+              <p>Separate, spacious dining hall designed to comfortably host grand feasts with live counters.</p>
+              <div class="venue-specs">
+                <span><i class="fas fa-utensils"></i> Multi-Cuisine Setup</span>
+                <span><i class="fas fa-users"></i> 600 Seater</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 4: EVENTS & SERVICES ================= -->
+  <div id="view-events" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Bespoke Occasions</span>
+        <h1 class="brand-font">Events & Services</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">From intimate gatherings to majestic weddings, we orchestrate perfection.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="services-grid" id="events-grid-container"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 5: GALLERY ================= -->
+  <div id="view-gallery" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Visual Symphony</span>
+        <h1 class="brand-font">Our Gallery</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">A glimpse into the celebrations hosted at KANTAMA.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" onclick="filterGallery('all', event)">All Moments</button>
+          <button class="filter-btn" onclick="filterGallery('weddings', event)">Weddings</button>
+          <button class="filter-btn" onclick="filterGallery('decorations', event)">Decorations</button>
+          <button class="filter-btn" onclick="filterGallery('stage', event)">Stage Design</button>
+          <button class="filter-btn" onclick="filterGallery('dining', event)">Dining</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid-box"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 6: PACKAGES ================= -->
+  <div id="view-packages" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Exclusive Offerings</span>
+        <h1 class="brand-font">Celebration Packages</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">Curated packages designed to suit every grandeur requirement.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="packages-grid">
+          <div class="package-card">
+            <div>
+              <h3 class="package-title">Silver Celebration</h3>
+              <div class="package-price">Contact for Pricing</div>
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> Main Banquet Hall Access</li>
+                <li><i class="fas fa-check"></i> Standard Stage Decoration</li>
+                <li><i class="fas fa-check"></i> Basic Lighting & Sound</li>
+                <li><i class="fas fa-check"></i> Valet Parking Service</li>
+              </ul>
+            </div>
+            <button class="btn-outline" onclick="openPackageWhatsApp('Silver Celebration Package')">Request Quote</button>
+          </div>
+
+          <div class="package-card featured">
+            <div class="package-badge">Most Popular</div>
+            <div>
+              <h3 class="package-title">Royal Celebration</h3>
+              <div class="package-price">Contact for Pricing</div>
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> Grand Ballroom & Dining Suite</li>
+                <li><i class="fas fa-check"></i> Premium Floral & Mandap Decor</li>
+                <li><i class="fas fa-check"></i> Advanced Lighting & DJ Setup</li>
+                <li><i class="fas fa-check"></i> Dedicated Butler & Valet</li>
+                <li><i class="fas fa-check"></i> Bridal Changing Suite</li>
+              </ul>
+            </div>
+            <button class="btn-gold" onclick="openPackageWhatsApp('Royal Celebration Package')">Request Quote</button>
+          </div>
+
+          <div class="package-card">
+            <div>
+              <h3 class="package-title">Grand Celebration</h3>
+              <div class="package-price">Contact for Pricing</div>
+              <ul class="package-features">
+                <li><i class="fas fa-check"></i> Exclusive Full Venue Buyout</li>
+                <li><i class="fas fa-check"></i> Bespoke Designer Theme Decor</li>
+                <li><i class="fas fa-check"></i> Premium Multi-Cuisine Catering Setup</li>
+                <li><i class="fas fa-check"></i> Celebrity Sound & Lighting</li>
+                <li><i class="fas fa-check"></i> VIP Concierge & Security</li>
+              </ul>
+            </div>
+            <button class="btn-outline" onclick="openPackageWhatsApp('Grand Celebration Package')">Request Quote</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= PAGE 7: CONTACT & BOOKING ================= -->
+  <div id="view-contact" class="page-view">
+    <section class="about-hero">
+      <div class="container">
+        <span class="hero-tag">Get in Touch</span>
+        <h1 class="brand-font">Contact & Booking</h1>
+        <p style="color:#E2D9D0; max-width:600px; margin: 0 auto;">Connect with our event consultants to reserve your date.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container contact-grid">
+        <div class="contact-info-box">
+          <h3 style="font-size:1.8rem; margin-bottom:18px; color:var(--accent);">Kantama Concierge</h3>
+          <p style="color:#D2C2B4; margin-bottom:28px;">Let us help you craft an unforgettable celebration. Reach out directly or submit your inquiry.</p>
+          
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h5 style="color:var(--accent); margin-bottom:4px; text-transform:uppercase; letter-spacing:1px; font-size:0.82rem;">Location</h5>
+              <p>Kantama Grand Avenue, Surat, Gujarat</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h5 style="color:var(--accent); margin-bottom:4px; text-transform:uppercase; letter-spacing:1px; font-size:0.82rem;">Direct Line</h5>
+              <p>+91 98241 60664</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h5 style="color:var(--accent); margin-bottom:4px; text-transform:uppercase; letter-spacing:1px; font-size:0.82rem;">Email</h5>
+              <p>havytechnologies@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-box">
+          <h3 style="font-size:1.65rem; margin-bottom:22px; color:var(--secondary);">Event Inquiry Form</h3>
+          <form onsubmit="handleBookingFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="b-name" class="form-control" required placeholder="Aarav Sharma">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" id="b-phone" class="form-control" required placeholder="+91 98241 60664">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Event Type *</label>
+              <select id="b-event" class="form-control">
+                <option>Grand Wedding</option>
+                <option>Wedding Reception</option>
+                <option>Engagement Ceremony</option>
+                <option>Birthday Celebration</option>
+                <option>Corporate Gala</option>
+                <option>Anniversary Celebration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Event Date *</label>
+              <input type="date" id="b-date" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Expected Number of Guests *</label>
+              <input type="number" id="b-guests" class="form-control" required placeholder="500">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred Package</label>
+              <select id="b-package" class="form-control">
+                <option>Silver Celebration</option>
+                <option>Royal Celebration</option>
+                <option>Grand Celebration</option>
+                <option>Customized Package</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Additional Requirements</label>
+              <textarea id="b-notes" class="form-control" rows="3" placeholder="Specific theme, catering preferences, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width:100%;">
+              <i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> Submit via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-logo-icon">K</div>
+            <div>
+              <span class="brand-logo-text">KANTAMA</span>
+              <span class="brand-logo-sub">Banquet Hall</span>
+            </div>
+          </div>
+          <p style="color:#D2C2B4; font-size:0.9rem; margin-bottom:20px;">Where every celebration becomes a royal memory. The premier destination for weddings and elite galas.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home" onclick="switchPage('home'); return false;">Home</a></li>
+            <li><a href="#about" onclick="switchPage('about'); return false;">About Us</a></li>
+            <li><a href="#venue" onclick="switchPage('venue'); return false;">The Venue</a></li>
+            <li><a href="#events" onclick="switchPage('events'); return false;">Events & Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Occasions</h4>
+          <ul>
+            <li><a href="#events" onclick="switchPage('events'); return false;">Weddings & Receptions</a></li>
+            <li><a href="#events" onclick="switchPage('events'); return false;">Engagement Ceremonies</a></li>
+            <li><a href="#events" onclick="switchPage('events'); return false;">Corporate Galas</a></li>
+            <li><a href="#events" onclick="switchPage('events'); return false;">Family Celebrations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <p style="color:#D2C2B4; font-size:0.9rem; margin-bottom:10px;"><i class="fas fa-phone-alt"></i> +91 98241 60664</p>
+          <p style="color:#D2C2B4; font-size:0.9rem; margin-bottom:18px;"><i class="fas fa-envelope"></i> havytechnologies@gmail.com</p>
+          <button class="btn-gold" style="padding:10px 20px; font-size:0.75rem;" onclick="openGeneralWhatsApp()">WhatsApp Concierge</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 KANTAMA Banquet Hall. All Rights Reserved. Crafted with Luxury Standards.
+      </div>
+    </div>
+  </footer>
+
+  <a href="javascript:void(0);" onclick="openGeneralWhatsApp()" class="floating-whatsapp" title="Chat with Concierge">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <div id="lightbox-modal" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Gallery View">
+  </div>
+
+  <!-- ==========================================================================
+     JAVASCRIPT LOGIC
+     ========================================================================== -->
+  <script>
+    const BUSINESS_WHATSAPP_NUMBER = "919824160664";
+
+    function sendWhatsAppMessage(messageText) {
+      const encodedMessage = encodeURIComponent(messageText);
+      const url = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodedMessage}`;
+      window.open(url, '_blank');
+    }
+
+    function openGeneralWhatsApp() {
+      const msg = "Hello KANTAMA Banquet Hall!\n\nI would like to enquire about venue availability, pricing, and details for an upcoming event.";
+      sendWhatsAppMessage(msg);
+    }
+
+    function openPackageWhatsApp(packageName) {
+      const msg = `Hello KANTAMA Banquet Hall!\n\nI am interested in the *${packageName}*.\n\nPlease share further pricing details, availability, and inclusions. Thank you!`;
+      sendWhatsAppMessage(msg);
+    }
+
+    function openEventWhatsApp(eventName) {
+      const msg = `Hello KANTAMA Banquet Hall!\n\nI would like to enquire about hosting a *${eventName}* at your venue.\n\nPlease share availability and further details. Thank you!`;
+      sendWhatsAppMessage(msg);
+    }
+
+    const introScenes = [
+      {
+        video: "https://assets.mixkit.co/videos/preview/mixkit-set-of-wedding-tables-and-decorations-41662-large.mp4",
+        badge: "Act I • The Royal Threshold",
+        title: "Where Every Celebration Becomes a Royal Memory",
+        subtitle: "Step into an extraordinary world of unmatched grandeur and elegance."
+      },
+      {
+        video: "https://assets.mixkit.co/videos/preview/mixkit-luxury-hotel-hallway-with-lights-41716-large.mp4",
+        badge: "Act II • Architectural Splendor",
+        title: "Designed for Magnificent Gatherings",
+        subtitle: "Every archway, chandelier, and marble corridor crafted to perfection."
+      },
+      {
+        video: "https://assets.mixkit.co/videos/preview/mixkit-table-with-candles-and-decoration-in-a-restaurant-41663-large.mp4",
+        badge: "Act III • Unforgettable Moments",
+        title: "Your Milestone Awaits",
+        subtitle: "Immaculate hospitality and bespoke execution for your special day."
+      }
+    ];
+
+    let currentIntroIndex = 0;
+    let isVideoPlaying = false;
+    let isSoundMuted = true;
+
+    const introVideoEl = document.getElementById("intro-video-element");
+    const introBtnText = document.getElementById("intro-btn-text");
+    const introSceneBadge = document.getElementById("intro-scene-badge");
+    const introSceneTitle = document.getElementById("intro-scene-title");
+    const introSceneSubtitle = document.getElementById("intro-scene-subtitle");
+    const soundToggleBtn = document.getElementById("sound-toggle-btn");
+
+    function initIntroScene(index) {
+      currentIntroIndex = index;
+      const scene = introScenes[index];
+      
+      introSceneBadge.textContent = scene.badge;
+      introSceneTitle.textContent = scene.title;
+      introSceneSubtitle.textContent = scene.subtitle;
+
+      for(let i = 0; i < introScenes.length; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if(dot) {
+          if(i === index) dot.classList.add("active");
+          else dot.classList.remove("active");
+        }
+      }
+
+      introVideoEl.src = scene.video;
+      introVideoEl.load();
+      introVideoEl.muted = isSoundMuted;
+
+      introBtnText.textContent = "Tap to Play Scene";
+      isVideoPlaying = false;
+    }
+
+    function handleIntroAction() {
+      if (!isVideoPlaying) {
+        introVideoEl.play().then(() => {
+          isVideoPlaying = true;
+          introBtnText.textContent = "Continue to Next Act";
+        }).catch(() => {
+          onIntroVideoEnded();
+        });
+
+        introVideoEl.onended = () => {
+          onIntroVideoEnded();
+        };
+      } else {
+        onIntroVideoEnded();
+      }
+    }
+
+    function onIntroVideoEnded() {
+      isVideoPlaying = false;
+      if (currentIntroIndex < introScenes.length - 1) {
+        initIntroScene(currentIntroIndex + 1);
+      } else {
+        skipCinematicIntro();
+      }
+    }
+
+    function skipCinematicIntro() {
+      const introBox = document.getElementById("cinematic-intro");
+      introVideoEl.pause();
+      introBox.classList.add("fade-out");
+      setTimeout(() => {
+        introBox.style.display = "none";
+      }, 800);
+    }
+
+    soundToggleBtn.addEventListener("click", () => {
+      isSoundMuted = !isSoundMuted;
+      introVideoEl.muted = isSoundMuted;
+      soundToggleBtn.innerHTML = isSoundMuted ? '<i class="fas fa-volume-mute"></i> Sound: Off' : '<i class="fas fa-volume-up"></i> Sound: On';
+    });
+
+    function switchPage(pageId) {
+      const navLinksMenu = document.getElementById("nav-links-menu");
+      const hamburgerIcon = document.querySelector(".hamburger i");
+      if (navLinksMenu.classList.contains("mobile-open")) {
+        navLinksMenu.classList.remove("mobile-open");
+        hamburgerIcon.className = "fas fa-bars";
+      }
+
+      document.querySelectorAll(".page-view").forEach(view => {
+        view.classList.remove("active-view");
+      });
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("data-page") === pageId) {
+          link.classList.add("active");
+        }
+      });
+
+      const targetView = document.getElementById(`view-${pageId}`);
+      if(targetView) {
+        targetView.classList.add("active-view");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function toggleMobileMenu() {
+      const navLinksMenu = document.getElementById("nav-links-menu");
+      const hamburgerIcon = document.querySelector(".hamburger i");
+      
+      navLinksMenu.classList.toggle("mobile-open");
+      
+      if (navLinksMenu.classList.contains("mobile-open")) {
+        hamburgerIcon.className = "fas fa-times";
+      } else {
+        hamburgerIcon.className = "fas fa-bars";
+      }
+    }
+
+    const eventsData = [
+      { name: "Grand Weddings", desc: "Breathtaking mandaps, regal seating, and unmatched royal hospitality for your eternal union.", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" },
+      { name: "Wedding Receptions", desc: "Atmospheric lighting, magnificent stages, and spacious dining for celebratory evenings.", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" },
+      { name: "Engagement Ceremonies", desc: "Intimate yet opulent setup to mark the beginning of your journey together.", img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" },
+      { name: "Birthday Celebrations", desc: "Turn milestone birthdays into legendary gala events with custom decor and catering.", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Corporate Galas", desc: "State-of-the-art acoustics and sophisticated corporate setup for elite business gatherings.", img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80" },
+      { name: "Anniversary Celebrations", desc: "Renew your vows or celebrate years of togetherness in an atmosphere of pure luxury.", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" }
+    ];
+
+    function renderEventsPage() {
+      const container = document.getElementById("events-grid-container");
+      if(!container) return;
+      container.innerHTML = eventsData.map(ev => `
+        <div class="service-card">
+          <img src="${ev.img}" alt="${ev.name}" class="service-card-img">
+          <div class="service-card-content">
+            <h3>${ev.name}</h3>
+            <p>${ev.desc}</p>
+            <button class="btn-outline" onclick="openEventWhatsApp('${ev.name}')">Enquire Now &rarr;</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const galleryData = [
+      { category: "weddings", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" },
+      { category: "decorations", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" },
+      { category: "stage", img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" },
+      { category: "dining", img: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" },
+      { category: "weddings", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" },
+      { category: "decorations", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" }
+    ];
+
+    function renderGallery(filter = 'all') {
+      const grid = document.getElementById("gallery-grid-box");
+      if(!grid) return;
+      const filtered = filter === 'all' ? galleryData : galleryData.filter(item => item.category === filter);
+      
+      grid.innerHTML = filtered.map(item => `
+        <div class="gallery-item" onclick="openLightbox('${item.img}')">
+          <img src="${item.img}" alt="Kantama Gallery Moment">
+        </div>
+      `).join('');
+    }
+
+    function filterGallery(category, evt) {
+      document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+      if(evt && evt.currentTarget) evt.currentTarget.classList.add("active");
+      renderGallery(category);
+    }
+
+    function openLightbox(imgSrc) {
+      const modal = document.getElementById("lightbox-modal");
+      const modalImg = document.getElementById("lightbox-img");
+      modalImg.src = imgSrc;
+      modal.classList.add("active");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox-modal").classList.remove("active");
+    }
+
+    function handleBookingFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("b-name").value;
+      const phone = document.getElementById("b-phone").value;
+      const eventType = document.getElementById("b-event").value;
+      const date = document.getElementById("b-date").value;
+      const guests = document.getElementById("b-guests").value;
+      const pkg = document.getElementById("b-package").value;
+      const notes = document.getElementById("b-notes").value || "None";
+
+      const message = `Hello KANTAMA Banquet Hall!\n\nI would like to enquire about booking your venue.\n\nName: ${name}\nPhone: ${phone}\nEvent Type: ${eventType}\nEvent Date: ${date}\nExpected Guests: ${guests}\nPackage: ${pkg}\nAdditional Requirements: ${notes}\n\nPlease share availability, pricing and further details.\n\nThank you!`;
+      
+      sendWhatsAppMessage(message);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      initIntroScene(0);
+      renderEventsPage();
+      renderGallery('all');
+    });
+  </script>
+</body>
+</html>
