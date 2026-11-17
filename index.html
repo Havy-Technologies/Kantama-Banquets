@@ -130,13 +130,13 @@
     }
 
     /* ==========================================================================
-       CINEMATIC VIDEO INTRO (FULLY RESPONSIVE)
+       CINEMATIC VIDEO INTRO (100% ORIGINAL VIDEO, NO MAROON TINT)
        ========================================================================== */
     #cinematic-intro {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: var(--secondary);
+      background: #000000; /* Pure Black Base so no maroon tint bleeds through */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -156,6 +156,7 @@
       z-index: 10;
       flex-wrap: wrap;
       gap: 10px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
     }
 
     .intro-logo {
@@ -164,6 +165,7 @@
       color: var(--accent);
       letter-spacing: 3px;
       font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
     .intro-controls {
@@ -173,7 +175,8 @@
     }
 
     .intro-btn-sm {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
       border: var(--border-gold);
       color: var(--accent-light);
       padding: 7px 14px;
@@ -188,7 +191,7 @@
 
     .intro-btn-sm:hover {
       background: var(--accent);
-      color: var(--secondary);
+      color: #000;
     }
 
     .intro-screen-body {
@@ -200,28 +203,38 @@
       overflow: hidden;
     }
 
+    /* 100% Original Video without Maroon or Dark Filter */
     .intro-video-el {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.45;
-      filter: brightness(0.8);
+      opacity: 1;
+      filter: none;
     }
 
-    .intro-vignette {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, rgba(48,7,20,0.3) 0%, rgba(48,7,20,0.88) 100%);
-    }
-
+    /* Content Box: Hidden while video plays, appears on last frame when video ends */
     .intro-content-box {
       position: relative;
       z-index: 5;
       text-align: center;
-      max-width: 800px;
-      padding: 0 20px;
+      max-width: 760px;
+      padding: 36px 28px;
+      margin: 0 20px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .intro-content-box.hidden-during-play {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px) scale(0.96);
     }
 
     .intro-subtitle-tag {
@@ -229,25 +242,27 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--accent);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: inline-block;
       border-bottom: 1px solid var(--accent);
-      padding-bottom: 6px;
+      padding-bottom: 5px;
     }
 
     .intro-main-title {
-      font-size: clamp(1.85rem, 5vw, 4.2rem);
+      font-size: clamp(1.75rem, 4.5vw, 3.6rem);
       color: var(--white);
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       line-height: 1.2;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9);
     }
 
     .intro-desc {
-      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-      color: #E2D9D0;
-      margin-bottom: 30px;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: #F3EFEA;
+      margin-bottom: 26px;
       font-weight: 300;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
     }
 
     .intro-footer {
@@ -256,6 +271,7 @@
       justify-content: space-between;
       align-items: center;
       z-index: 10;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
     }
 
     .intro-progress-dots {
@@ -266,7 +282,7 @@
     .intro-dot {
       width: 28px;
       height: 4px;
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 2px;
       transition: var(--transition);
     }
@@ -594,7 +610,6 @@
       letter-spacing: 1.5px;
     }
 
-    /* All Grids use min(100%, 290px) to prevent horizontal scroll on 320px phones */
     .events-preview-grid,
     .venue-grid,
     .services-grid,
@@ -1014,7 +1029,7 @@
     }
 
     /* ==========================================================================
-       TABLET & MOBILE BREAKPOINTS (TRUE MULTI-DEVICE COMPATIBILITY)
+       TABLET & MOBILE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 992px) {
       .welcome-grid, .story-grid, .contact-grid {
@@ -1086,13 +1101,17 @@
         flex-direction: column;
         gap: 12px;
       }
+
+      .intro-content-box {
+        padding: 26px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-     CINEMATIC VIDEO INTRODUCTION
+     CINEMATIC VIDEO INTRODUCTION (100% ORIGINAL VIDEO, NO MAROON OVERLAY)
      ========================================================================== -->
   <div id="cinematic-intro">
     <div class="intro-header">
@@ -1105,10 +1124,10 @@
 
     <div class="intro-screen-body">
       <video id="intro-video-element" class="intro-video-el" playsinline muted preload="auto"></video>
-      <div class="intro-vignette"></div>
 
-      <div class="intro-content-box">
-        <span class="intro-subtitle-tag" id="intro-scene-badge">Act I • The Royal Threshold</span>
+      <!-- Text & Button Box: Stays hidden while video plays, shows on final frame when video ends -->
+      <div class="intro-content-box" id="intro-overlay-box">
+        <span class="intro-subtitle-tag" id="intro-scene-badge">KANTAMA BANQUET HALL</span>
         <h1 class="intro-main-title" id="intro-scene-title">Where Every Celebration Becomes a Royal Memory</h1>
         <p class="intro-desc" id="intro-scene-subtitle">Step into an extraordinary world of unmatched grandeur and elegance.</p>
         
@@ -1121,12 +1140,12 @@
     </div>
 
     <div class="intro-footer">
-      <div class="intro-progress-dots">
+      <div class="intro-progress-dots" id="intro-dots-container">
         <div class="intro-dot active" id="dot-0"></div>
         <div class="intro-dot" id="dot-1"></div>
         <div class="intro-dot" id="dot-2"></div>
       </div>
-      <div style="font-size:0.7rem; letter-spacing: 2px; color: #D2C2B4; text-transform: uppercase;">
+      <div style="font-size:0.7rem; letter-spacing: 2px; color: #E5E5E5; text-transform: uppercase;">
         Cinematic Experience
       </div>
     </div>
@@ -1651,85 +1670,131 @@
       sendWhatsAppMessage(msg);
     }
 
+    /* ==========================================================================
+       VIDEO PLAYLIST (NO "ACT" LABELS, TEXT APPEARS ONLY WHEN VIDEO ENDS)
+       ========================================================================== */
     const introScenes = [
       {
-        video: "v1.mp4",
-        badge: "Act I • The Royal Threshold",
-        title: "Where Every Celebration Becomes a Royal Memory",
-        subtitle: "Step into an extraordinary world of unmatched grandeur and elegance."
+        video: "v1.mp4", // Apna 1st video path yahan dalein
+        badge: "THE ROYAL THRESHOLD",
+        title: "A Grand Beginning",
+        subtitle: "Experience elegance and architectural grandeur beyond expectations."
       },
       {
-        video: "v2.mp4",
-        badge: "Act II • Architectural Splendor",
+        video: "v2.mp4", // Apna 2nd video path yahan dalein
+        badge: "ARCHITECTURAL SPLENDOR",
         title: "Designed for Magnificent Gatherings",
         subtitle: "Every archway, chandelier, and marble corridor crafted to perfection."
       },
       {
-        video: "v3.mp4",
-        badge: "Act III • Unforgettable Moments",
+        video: "v3.mp4", // Apna 3rd video path yahan dalein
+        badge: "UNFORGETTABLE MOMENTS",
         title: "Your Milestone Awaits",
         subtitle: "Immaculate hospitality and bespoke execution for your special day."
       }
     ];
 
-    let currentIntroIndex = 0;
-    let isVideoPlaying = false;
+    // Stages: "welcome" -> playing scene 0 -> paused at end of scene 0 -> playing scene 1 -> etc.
+    let currentSceneIdx = 0;
+    let introState = "welcome"; // "welcome" | "playing" | "ended"
     let isSoundMuted = true;
 
     const introVideoEl = document.getElementById("intro-video-element");
+    const introOverlayBox = document.getElementById("intro-overlay-box");
     const introBtnText = document.getElementById("intro-btn-text");
     const introSceneBadge = document.getElementById("intro-scene-badge");
     const introSceneTitle = document.getElementById("intro-scene-title");
     const introSceneSubtitle = document.getElementById("intro-scene-subtitle");
     const soundToggleBtn = document.getElementById("sound-toggle-btn");
 
-    function initIntroScene(index) {
-      currentIntroIndex = index;
-      const scene = introScenes[index];
-      
+    function updateDots(index) {
+      for (let i = 0; i < introScenes.length; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+          if (i === index) dot.classList.add("active");
+          else dot.classList.remove("active");
+        }
+      }
+    }
+
+    // Initial Welcome Screen (Before 1st Video Starts)
+    function setupInitialWelcome() {
+      currentSceneIdx = 0;
+      introState = "welcome";
+      updateDots(0);
+
+      // Preload first video so its first frame shows clearly in background
+      introVideoEl.src = introScenes[0].video;
+      introVideoEl.load();
+      introVideoEl.muted = isSoundMuted;
+
+      introSceneBadge.textContent = "KANTAMA BANQUET HALL";
+      introSceneTitle.textContent = "Where Every Celebration Becomes a Royal Memory";
+      introSceneSubtitle.textContent = "Step into an extraordinary world of unmatched grandeur and elegance.";
+      introBtnText.textContent = "Tap to Experience";
+      introOverlayBox.classList.remove("hidden-during-play");
+    }
+
+    // Play current video with ZERO text overlay (pure original video)
+    function playCurrentSceneVideo() {
+      const scene = introScenes[currentSceneIdx];
+      updateDots(currentSceneIdx);
+
+      // Hide text overlay completely while video plays
+      introOverlayBox.classList.add("hidden-during-play");
+      introState = "playing";
+
+      if (!introVideoEl.src.endsWith(scene.video)) {
+        introVideoEl.src = scene.video;
+        introVideoEl.load();
+      }
+      introVideoEl.muted = isSoundMuted;
+
+      introVideoEl.play().catch(() => {
+        // Fallback if video file is missing or blocked: show end screen immediately
+        showSceneEndOverlay();
+      });
+
+      introVideoEl.onended = () => {
+        showSceneEndOverlay();
+      };
+
+      introVideoEl.onerror = () => {
+        showSceneEndOverlay();
+      };
+    }
+
+    // Called ONLY when the current video finishes (on last frame)
+    function showSceneEndOverlay() {
+      introState = "ended";
+      const scene = introScenes[currentSceneIdx];
+
       introSceneBadge.textContent = scene.badge;
       introSceneTitle.textContent = scene.title;
       introSceneSubtitle.textContent = scene.subtitle;
 
-      for(let i = 0; i < introScenes.length; i++) {
-        const dot = document.getElementById(`dot-${i}`);
-        if(dot) {
-          if(i === index) dot.classList.add("active");
-          else dot.classList.remove("active");
-        }
+      if (currentSceneIdx < introScenes.length - 1) {
+        introBtnText.textContent = "Continue";
+      } else {
+        introBtnText.textContent = "Enter Website";
       }
 
-      introVideoEl.src = scene.video;
-      introVideoEl.load();
-      introVideoEl.muted = isSoundMuted;
-
-      introBtnText.textContent = "Tap to Play Scene";
-      isVideoPlaying = false;
+      // Reveal text and Continue button over the paused last frame of the video
+      introOverlayBox.classList.remove("hidden-during-play");
     }
 
     function handleIntroAction() {
-      if (!isVideoPlaying) {
-        introVideoEl.play().then(() => {
-          isVideoPlaying = true;
-          introBtnText.textContent = "Continue to Next Act";
-        }).catch(() => {
-          onIntroVideoEnded();
-        });
-
-        introVideoEl.onended = () => {
-          onIntroVideoEnded();
-        };
-      } else {
-        onIntroVideoEnded();
-      }
-    }
-
-    function onIntroVideoEnded() {
-      isVideoPlaying = false;
-      if (currentIntroIndex < introScenes.length - 1) {
-        initIntroScene(currentIntroIndex + 1);
-      } else {
-        skipCinematicIntro();
+      if (introState === "welcome") {
+        // Visitor tapped "Tap to Experience" -> Play 1st video cleanly
+        playCurrentSceneVideo();
+      } else if (introState === "ended") {
+        // Visitor tapped "Continue" after video ended -> Play next video cleanly
+        if (currentSceneIdx < introScenes.length - 1) {
+          currentSceneIdx++;
+          playCurrentSceneVideo();
+        } else {
+          skipCinematicIntro();
+        }
       }
     }
 
@@ -1864,7 +1929,7 @@
     }
 
     window.addEventListener("DOMContentLoaded", () => {
-      initIntroScene(0);
+      setupInitialWelcome();
       renderEventsPage();
       renderGallery('all');
     });
